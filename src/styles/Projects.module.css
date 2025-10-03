@@ -1,0 +1,138 @@
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.imageContainer {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.projectImage {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.projectListContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fccfd8;
+  box-sizing: border-box;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projectItem {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  border-bottom: 1px solid #e6cdd1;
+}
+
+.projectItem:hover {
+  color: #d46a7a;
+}
+
+.active {
+  font-weight: 600;
+  color: #c94a61;
+}
+
+.socialLinksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #fccfd8;
+  padding: 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .projectImage {
+    max-height: 250px;
+  }
+
+  .projectItem {
+    font-size: 0.95rem;
+  }
+
+  .projectListContainer {
+    padding: 15px;
+  }
+
+  .socialLinksContainer {
+    padding: 15px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projectsContainer {
+    padding: 0.5rem;
+    gap: 8px;
+  }
+
+  .imageContainer {
+    padding: 0.25rem;
+  }
+
+  .projectImage {
+    max-height: 200px;
+  }
+
+  .projectItem {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .projectListContainer {
+    padding: 12px;
+  }
+
+  .socialLinksContainer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projectImage {
+    max-height: 350px;
+  }
+
+  .projectItem {
+    font-size: 1.05rem;
+  }
+}

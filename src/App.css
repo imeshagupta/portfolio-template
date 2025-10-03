@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrap {
+  margin: 0 auto;
+  background: #fdeff2;
+  padding: 16px;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1.5fr 1fr var(--sidebar);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "main center sidebar"
+    "box1 box2 sidebar";
+  min-height: 420px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  grid-area: header;
+  color: white;
+  padding: 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.main {
+  grid-area: main;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.center {
+  grid-area: center;
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
+}
+
+.center .tall {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  background: var(--card-bg);
+}
+
+.center .small {
+  height: 120px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  background: var(--card-bg);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  background: #fdeff2;
+}
+
+.sidebar .content {
+  min-height: 180px;
+}
+
+.sidebar .small-btn {
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.box {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.box1 {
+  grid-area: box1;
+}
+.box2 {
+  grid-area: box2;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "center"
+      "box1"
+      "box2"
+      "sidebar";
   }
-  to {
-    transform: rotate(360deg);
+  .sidebar {
+    order: 999;
   }
 }
